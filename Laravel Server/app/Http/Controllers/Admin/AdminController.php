@@ -23,4 +23,16 @@ class AdminController extends Controller
         ], 200);
     }
 
+    public function addCategory(Request $request){
+        $category = new Category;
+        $category->name = $request->name;
+        $category->image= $request->image;
+        $category->save();
+
+        return response()->json([
+            "status" => "Success",
+            "category" => $category
+        ], 200);
+    }
+
 }

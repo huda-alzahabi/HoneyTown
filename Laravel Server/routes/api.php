@@ -15,6 +15,7 @@ Route::group(['prefix' => 'v1'], function(){
     Route::group(['prefix' => 'admin'], function(){
         // Route::get('/restaurants/{id?}', [AdminController::class, 'getAllRestos']);
         // Route::get('/search/{name}', [RestoController::class, 'getRestoByName']);
+        Route::post('/add_category', [AdminController::class, 'addCategory']);
         Route::post('/add_item', [AdminController::class, 'addItem']);
     });
 
