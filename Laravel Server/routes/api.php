@@ -11,7 +11,6 @@ Route::group(['prefix' => 'v1'], function(){
        Route::get('/all_items', [UserController::class, 'getAllItems']);
        Route::get('/favorites', [UserController::class, 'getFavoriteItems']);
        Route::post('/items_by_category', [UserController::class, 'getItemsByCategory']);
-
        Route::group(['middleware' => 'role.favorites'], function(){
            Route::post('/add_to_favorites', [UserController::class, 'addToFavorites']);
            });
