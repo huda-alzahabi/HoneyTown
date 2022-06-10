@@ -18,11 +18,13 @@ class FavoritesMiddleware
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
-        if($user && $user->user_type_id == 1 ){
+        if($user ){
             return $next($request);
         }
 
-        return redirect(route("not-found"));
+        return response()->json([
+            "status" => "Unathorized"
+        ], 200);
 
     }
 }
