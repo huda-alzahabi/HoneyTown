@@ -13,13 +13,15 @@ Route::group(['prefix' => 'v1'], function(){
        Route::post('/items_by_category', [UserController::class, 'getItemsByCategory']);
        Route::group(['middleware' => 'role.favorites'], function(){
            Route::post('/add_to_favorites', [UserController::class, 'addToFavorites']);
-           });
+        });
 
     });
 
     Route::group(['prefix' => 'admin'], function(){
-        Route::post('/add_category', [AdminController::class, 'addCategory']);
-        Route::post('/add_item', [AdminController::class, 'addItem']);
+        Route::group(['middleware' => 'role.admin'], function(){
+            Route::post('/add_category', [AdminController::class, 'addCategory']);
+            Route::post('/add_item', [AdminController::class, 'addItem']);
+        });
     });
 
     Route::group(['middleware' => 'api'], function($router) {
