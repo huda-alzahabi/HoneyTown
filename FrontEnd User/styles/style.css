@@ -4,16 +4,24 @@
       padding: 0;
       box-sizing: border-box;
   }
+  
+  body {
+      background: url("../assets/honeycomb-light.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
   /* NavBar */
   
   .top-nav {
       display: flex;
       height: 80px;
-      float: right;
       font-family: 'Acme', sans-serif;
+      background-color: rgb(221, 202, 92);
+      width: 100%;
   }
   
   .links {
+      flex: auto;
       list-style: none;
       display: flex;
       justify-content: center;
@@ -33,4 +41,17 @@
   
   .links>li:last-child {
       margin-left: 0;
+  }
+  
+  .btn {
+      padding: 14px 10px;
+      border: none;
+      border-radius: 5px;
+  }
+  
+  .btn-login {
+      font-family: 'Acme', sans-serif;
+      font-weight: bold;
+      background-color: rgb(223, 209, 130);
+      font-size: 18px;
   }
