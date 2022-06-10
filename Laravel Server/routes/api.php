@@ -11,7 +11,7 @@ Route::group(['prefix' => 'v1'], function(){
        Route::get('/all_items', [UserController::class, 'getAllItems']);
        Route::get('/favorites', [UserController::class, 'getFavoriteItems']);
        Route::post('/add_to_favorites', [UserController::class, 'addToFavorites']);
-
+       Route::post('/items_by_category', [UserController::class, 'getItemsByCategory']);
 
     });
 

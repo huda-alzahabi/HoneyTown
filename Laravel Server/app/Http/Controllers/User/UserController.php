@@ -11,7 +11,6 @@ use App\Models\Favorite;
 class UserController extends Controller
 {
     public function getAllItems(){
-
        $items = Item::all();
         return response()->json([
             "status" => "Success",
@@ -26,6 +25,7 @@ class UserController extends Controller
             "favorites" => $favorites
         ], 200);
     }
+
     public function addToFavorites(Request $request){
         $favorite = new Favorite;
         $favorite["user_id"] = $request->user_id;
@@ -35,6 +35,15 @@ class UserController extends Controller
         return response()->json([
             "status" => "Success",
             "users" => $favorite
+        ], 200);
+    }
+
+    public function getItemsByCategory(Request $request){
+        $items= Item::where("categories_id",$request->id)->get();
+
+        return response()->json([
+            "status" => "Success",
+            "items" => $items
         ], 200);
     }
 }
