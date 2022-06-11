@@ -332,4 +332,12 @@ p {
         width: 150px;
         height: 150px;
     }
+    .hero-heading {
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+    .hero-paragraph {
+        font-size: 20px;
+        margin-bottom: 2px;
+    }
 }
