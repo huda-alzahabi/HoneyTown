@@ -58,14 +58,10 @@ function loginToMain() {
             password: login_pass,
         },
     }).then(function(response) {
-        /*When logged in check if he's an admin or user and direct him to the next page accordingly*/
-        // let type = result.type;
-        // if (type == 1) {
-        location.href = "../index.html";
-        // } else {
-        //     location.href = "";
-        // }
-        window.localStorage.setItem("user_id", result.id);
+        result = response.data;
+        console.log(result);
+        // location.href = "../index.html";
+        //  window.localStorage.setItem("user_id", result.id);
     });
 }
 loginSignup();
