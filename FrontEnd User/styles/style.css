@@ -132,7 +132,6 @@ body {
 .loginpage {
     margin: 0;
     padding: 0;
-    background: url("../assets/honeybg.jpg") no-repeat;
     height: 100vh;
     font-family: sans-serif;
     background-size: cover;
