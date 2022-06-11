@@ -249,6 +249,54 @@ label {
 }
 
 
+/*Items per category*/
+
+.honey_item {
+    text-align: center;
+}
+
+.honey_item>h1 {
+    font-family: "Segoe print", Arial, Helvetica, sans-serif;
+    font-size: 48px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    text-shadow: -1px -1px rgb(146, 22, 22), -3px 0 4px #000;
+}
+
+.items {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.category_item {
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    border: 5px solid burlywood;
+}
+
+.item_name,
+.item_price {
+    text-shadow: -1px -1px rgb(223, 209, 130), -3px 0 4px #000;
+    font-family: "Segoe print", Arial, Helvetica, sans-serif;
+    color: rgb(146, 22, 22);
+    padding: 30px 0 0 0;
+    font-size: 30px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.item_image {
+    width: 300px;
+    height: 300px;
+}
+
+
 /*Styling footer*/
 
 .footer {
@@ -275,9 +323,13 @@ p {
 @media only screen and (max-width: 800px) {
     .footer {
         flex-direction: column;
-        width: max-content;
+        width: 100%;
     }
     .links {
         width: 50%;
+    }
+    .item_image {
+        width: 150px;
+        height: 150px;
     }
 }
