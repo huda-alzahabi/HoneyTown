@@ -129,6 +129,18 @@ body {
 
 /*Login_Signup*/
 
+.loginpage {
+    margin: 0;
+    padding: 0;
+    background: url("../assets/honeybg.jpg") no-repeat;
+    height: 100vh;
+    font-family: sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
 .loginBox,
 .signupBox {
     position: absolute;
@@ -137,21 +149,18 @@ body {
     transform: translate(-50%, -50%);
     width: 30%;
     height: 90%;
-    background: rgb(221, 202, 92);
+    background: url("../assets/honeybg.webp");
     border-radius: 10px;
     padding: 30px;
     box-sizing: border-box;
+    background-size: cover;
     font-family: 'Acme', sans-serif;
 }
 
-h2 {
+.loginBox>h2 {
+    font-size: xx-large;
+    margin-top: 20%;
     text-align: center;
-}
-
-.image {
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 20px
 }
 
 .loginBox input,
@@ -169,8 +178,8 @@ h2 {
     border-bottom: 2px solid #262626;
     outline: none;
     height: 50px;
-    color: #fff;
-    background: transparent;
+    color: black;
+    background: rgb(245, 214, 167);
     font-size: 20px;
     padding-left: 20px;
     box-sizing: border-box
@@ -219,9 +228,11 @@ h2 {
     outline: none;
     height: 60px;
     font-size: 20px;
-    background: rgb(109, 91, 13);
+    background: rgb(245, 214, 167);
+    font-weight: bold;
     border-radius: 20px;
     cursor: pointer;
+    font-family: 'Acme', sans-serif;
 }
 
 .no_account {
