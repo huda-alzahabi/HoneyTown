@@ -343,4 +343,8 @@ p {
     .category-names {
         flex-direction: column;
     }
+    .loginBox,
+    .signupBox {
+        width: 90%;
+    }
 }

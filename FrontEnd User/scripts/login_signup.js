@@ -19,7 +19,53 @@ function showSignUp() {
         signupbox.style.display = "none";
         loginbox.style.display = "block";
     });
-}
 
-function loginToMain() {}
+    submit_signup.addEventListener("click", function() {
+        /*Defining Variables*/
+        let full_name = document.getElementById("full_name").value;
+        let signup_email = document.getElementById("signup_email").value;
+        let signup_pass = document.getElementById("signup_pass").value;
+        let conf_pass = document.getElementById("conf_pass").value;
+
+        /*Append the variables set by the user to the Form Data to send them to url*/
+        axios({
+            method: "post",
+            url: "http://127.0.0.1:8000/api/v1/register",
+            data: {
+                name: full_name,
+                email: signup_email,
+                password: signup_pass,
+                password_confirmation: conf_pass,
+            },
+        }).then((response) => {
+            console.log(response);
+            location.href = "../index.html";
+        });
+    });
+}
+/*If the user clicks on login*/
+function loginToMain() {
+    /*Defining variables*/
+    let login_email = document.getElementById("login_email").value;
+    let login_pass = document.getElementById("login_pass").value;
+
+    /*Append the variables set by the user to the Form Data to send them to url*/
+    axios({
+        method: "post",
+        url: "http://127.0.0.1:8000/api/v1/login",
+        data: {
+            email: login_email,
+            password: login_pass,
+        },
+    }).then(function(response) {
+        /*When logged in check if he's an admin or user and direct him to the next page accordingly*/
+        // let type = result.type;
+        // if (type == 1) {
+        location.href = "../index.html";
+        // } else {
+        //     location.href = "";
+        // }
+        window.localStorage.setItem("user_id", result.id);
+    });
+}
 loginSignup();
