@@ -10,6 +10,6 @@ function createCategory(id, name) {
     category_name.setAttribute("id", id);
     category_name.innerHTML = name;
 
-    let category = document.getElementsByClassName("category-names")[0];
+    let category = document.getElementsByClassName("category-names")[1];
     category.appendChild(category_name);
 }
