@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateCategoriesTable extends Migration
+class RemoveImageColumn extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class UpdateCategoriesTable extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table) {
-            $table->string('image')->after('name');
+            $table->dropColumn('image');
         });
     }
 
