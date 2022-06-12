@@ -17,6 +17,13 @@ class UserController extends Controller
             "items" => $items
         ], 200);
     }
+      public function getAllCategories(){
+       $categories = Category::all();
+        return response()->json([
+            "status" => "Success",
+            "categories" => $categories
+        ], 200);
+    }
 
     public function getFavoriteItems(Request $request){
         $favorites= Favorite::where("user_id",$request->id)->get();
