@@ -7,21 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Category;
 
-
 class AdminController extends Controller
 {
     public function addItem(Request $request){
-         $this->validate($request,[
-        'name' => 'required|max:250',
-        'price' => 'required',
-        'image' => 'required|file|mimes:jpeg,png,jpg,gif,svg',
-        'categories_id' => 'required',  ]);
-
-        $path = $request->file('image')->store('public/image/image');
         $item = new Item;
         $item->name = $request->name;
         $item->price = $request->price;
-        $item->image= $path;
+        $item->image= $request->image;
         $item->categories_id= $request->categories_id;
         $item->save();
 
@@ -41,12 +33,6 @@ class AdminController extends Controller
             "category" => $category
         ], 200);
     }
-     public function getAllCategories(){
-       $categories = Category::all();
-        return response()->json([
-            "status" => "Success",
-            "categories" => $categories
-        ], 200);
-    }
 
-}
+
+    }
