@@ -18,10 +18,10 @@ Route::group(['prefix' => 'v1'], function(){
     });
 
     Route::group(['prefix' => 'admin'], function(){
-    //   Route::group(['middleware' => 'role.admin'], function(){
+    Route::group(['middleware' => 'role.admin'], function(){
             Route::post('/add_category', [AdminController::class, 'addCategory']);
             Route::post('/add_item', [AdminController::class, 'addItem']);
-     //  });
+      });
     });
 
     Route::group(['middleware' => 'api'], function($router) {
