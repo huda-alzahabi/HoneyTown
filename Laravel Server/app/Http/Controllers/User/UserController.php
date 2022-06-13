@@ -41,7 +41,7 @@ class UserController extends Controller
 
         return response()->json([
             "status" => "Success",
-            "users" => $favorite
+            "favorites" => $favorite
         ], 200);
     }
 
